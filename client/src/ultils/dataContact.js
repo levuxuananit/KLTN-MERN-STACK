@@ -9,13 +9,13 @@ export const text = {
     },
     {
       text: "HỖ TRỢ ĐĂNG TIN",
-      phone: "Điện thoại: 0946741962",
-      zalo: "Zalo: 0946741962",
+      phone: "Điện thoại: 0899891422",
+      zalo: "Zalo: 0899891422",
     },
     {
       text: "HOTLINE 24/7",
-      phone: "Điện thoại: 0218547188",
-      zalo: "Zalo: 0218547188",
+      phone: "Điện thoại: 0899891422",
+      zalo: "Zalo: 0899891422",
     },
   ],
 };

@@ -79,7 +79,7 @@ const Dashboard = () => {
                     </div>
                     <div className='flex gap-4 justify-between h-[400px]'>
                         <div className='flex-1 h-full shadow-lg rounded-md flex flex-col p-4'>
-                            <h4 className='font-bold'>Số bài đăng cho thuê căng hộ</h4>
+                            <h4 className='font-bold'>Số bài đăng cho thuê căn hộ</h4>
                             <ChartLine
                                 data={data?.ctch}
                                 isMonth={isMonth}

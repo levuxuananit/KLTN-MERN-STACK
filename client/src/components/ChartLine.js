@@ -1,5 +1,6 @@
 import React, { memo, useEffect, useState } from 'react'
 import { Line } from 'react-chartjs-2'
+import dayjs from 'dayjs'
 import { Chart } from 'chart.js/auto'
 import { getDaysInMonth, getMonthInYear, getDaysInRange, getMonthsInRange } from '../ultils/fn'
 
@@ -9,16 +10,19 @@ const ChartLine = ({ data, isMonth, customTime }) => {
         // const number = isMonth
         //     ? getMonthsInRange(customTime?.from, customTime?.to)
         //     : getDaysInRange(customTime?.from, customTime?.to)
-        const daysInMonth = getDaysInMonth(Date.now(), 15)
-        const monthsInYear = getMonthInYear(Date.now(), 15)
+        const daysInMonth = getDaysInMonth(Date.now(), 20)
+        const monthsInYear = getMonthInYear(Date.now(), 20)
         const rawData = isMonth ? monthsInYear : daysInMonth
+        console.log({ rawData })
+        // dayjs("09-06-2025", "DD-MM-YYYY").format("DD-MM-YY")
         const editedData = rawData.map(el => {
             return ({
-                counter: data?.some(i => i.createdAt === el) ? data.find(i => i.createdAt === el)?.counter : 0,
+                counter: data?.some(i => dayjs(i.createdAt, "DD-MM-YYYY").format("DD-MM-YY") === el) ? data.find(i => dayjs(i.createdAt, "DD-MM-YYYY").format("DD-MM-YY") === el)?.counter : 0,
                 createdAt: el
             })
         })
         setChartData(editedData)
+        console.log({ editedData })
     }, [data])
     const options = {
         responsive: true,
